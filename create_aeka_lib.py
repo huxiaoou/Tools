@@ -193,9 +193,8 @@ if __name__ == "__main__":
         merged_image.save(img_save_path)
         logger.info(f"The sprite is saved to {SFG(img_save_path)}")
 
-        jdata = {name: asdict(aeka_lib)}
         with open(json_save_path, "w") as f:
-            json.dump(jdata, f)
+            json.dump(asdict(aeka_lib), f)
         logger.info(f"The animation data is saved to {SFG(json_save_path)}")
     else:
         print(f"There is no png available at {args.src}")
